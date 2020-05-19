@@ -13,4 +13,4 @@ database connections, words-finding APIs and so on.
 
 This is a screenshot of a game (early development stages)
 
-![alt text](assets/inclex_demo.PNG "inclex_demo")
+![alt text](assets/inclex_demo.png "inclex_demo")
