@@ -1,4 +1,4 @@
-#In-Memory Cache for Data Pullers
+# In-Memory Cache for Data Pullers
 I built this project during my coop term at CNW Cision Canada (winter term 2020).
 
 ## Issue
@@ -56,11 +56,11 @@ Using those stats, I decided to include the following metrics:
 ## Results
 The data pullers that were added to the system were able to keep up with the stream. The caching mechanism was also able to do what it was built for, and the settings at which it was running were enough to keep it up with the pullers
 
-![alt text](assets/cache_hitrate_evolution_during_data_retreival_from_a_stream.PNG "Cache hitrate evolution during data retreival from a strea")
+![alt text](assets/cache_hitrate_evolution_during_data_retreival_from_a_stream.png "Cache hitrate evolution during data retreival from a strea")
 
 *Cache hitrate evolution during data retreival from a stream*
 
-![alt text](assets/cache_size_evolution_during_data_retreival_from_a_stream.PNG "Cache size evolution during data retreival from a strea")
+![alt text](assets/cache_size_evolution_during_data_retreival_from_a_stream.png "Cache size evolution during data retreival from a strea")
 
 *Cache size evolution during data retreival from a stream*
 
