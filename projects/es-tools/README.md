@@ -1,6 +1,4 @@
-# ES-TOOLS
-**ES command line tools**
-
+#Command-line tools for Elasticsearch
 This application is a collection of command-line tools to query the Elasticsearch REST API.
 
 This application was built during the last month of my coop term at CNW Cision Canada (winter term 2020, remote work due to the pandemic).
@@ -14,7 +12,7 @@ Searching for data in Elasticsearch was tedious and prone to error as the data w
 Create a command line application with configurable commands (source, number of returned results, returned fields...).
 The requirements limited the minimum viable product to search operations.
 
-## Implementation:
+## Implementation
 The application was developed in Java using the JCommander library.
 The application parses a command from the command line and then constructs a search query and executes it in order to get a search result from Elasticsearch.
 
@@ -27,14 +25,14 @@ The minimum viable product was supposed to support search queries only, and even
 
 The project was built with Gradle.
 
-## Result:
+## Results
 We managed to finish developing the minimum viable product by the last day of the coop term. 
 
 The QA engineer was able to test it on the production environment and got search results back from the tool.
 
 The team was very satisfied with the product.
 
-## What I learned:
+## What I learned
 I learned how to collaborate with other team members and come up with the design and implementation of the project.
 
 We had to conduct spikes and present the research results to the team, organize design meetings to discuss our decisions, and divide the tasks so that everyone works on a particular aspect of the project.
