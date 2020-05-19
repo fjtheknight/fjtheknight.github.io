@@ -1,4 +1,4 @@
-#Command-line tools for Elasticsearch
+# Command-line tools for Elasticsearch
 This application is a collection of command-line tools to query the Elasticsearch REST API.
 
 This application was built during the last month of my coop term at CNW Cision Canada (winter term 2020, remote work due to the pandemic).
