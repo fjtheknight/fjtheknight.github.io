@@ -5,4 +5,4 @@ Coop projects:
 Personal projects:
 * [Flutter mobile game](inclex)
 * [Arduino-based Automatic Broiler Monitoring System](https://github.com/fjtheknight/AutomaticBroilerMonitoringSystem)
-* [Arduino-based Plant Watering System (uOttaHack 2 | second place)](https://devpost.com/software/powerplant)
+* [Arduino-based Plant Watering System (uOttaHack 2, second place)](https://devpost.com/software/powerplant)
