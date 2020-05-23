@@ -9,6 +9,7 @@ body {
   padding: 0px 20px 20px 20px;
   margin: auto;  
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+  background-image:url("https://www.kindpng.com/picc/m/85-856593_white-question-mark-transparent-background-question-mark-png.png");
 }
 
 h1 {
@@ -38,8 +39,20 @@ table {
 	background-color: #f1f1c1;
 }
 
+textarea {
+  width: 700px;
+  height: 100px;
+}
+
 /* Defining styling for a specific element type - each question */
 .question {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+}
+
+.comment {
   background-color: black;
   color: white;
   margin: 20px;
