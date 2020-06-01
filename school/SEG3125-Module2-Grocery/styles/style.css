@@ -35,3 +35,11 @@
   border: 1px solid #ccc;
   border-top: none;
 }
+
+/* Style the footer content */
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+}

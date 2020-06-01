@@ -38,6 +38,10 @@ function populateListProductChoices(diets, slct2) {
 	console.log(diets);
     var optionArray = restrictListProducts(products, diets);
 
+
+    // sort array based on price
+    // form https://stackoverflow.com/a/35092754
+
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
 	// <label for="Bread">Bread/label><br>
@@ -55,7 +59,7 @@ function populateListProductChoices(diets, slct2) {
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName));
+		label.appendChild(document.createTextNode(productName+ ' (' + products.find(product => product.name == productName).price + ')'));
 		s2.appendChild(label);
 		
 		// create a breakline node and add in HTML DOM
@@ -70,6 +74,7 @@ function populateListProductChoicesFromCheckBoxes(slct2) {
     console.log(checkedBoxes);
 
     let diets = [];
+    if(checkedBoxes != null)
     for(i=0; i<checkedBoxes.length; i++){
     	diets.push(checkedBoxes[i].value);
     }

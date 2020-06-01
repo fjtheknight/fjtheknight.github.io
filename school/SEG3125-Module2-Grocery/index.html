@@ -5,8 +5,8 @@
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
-	<h1>EPICERIE</h1>
+<body onload="populateListProductChoicesFromCheckBoxes('displayProduct')">
+	<h1>L'EPICERIE COMPREHENCIVE</h1>
 
 <!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
@@ -29,6 +29,7 @@
 	<form id="dietSelect">
 		<input type="checkbox" name="dietCheckBox" value="Vegetarian" onchange="populateListProductChoicesFromCheckBoxes('displayProduct')">Vegetarian<br>
 		<input type="checkbox" name="dietCheckBox" value="GlutenFree" onchange="populateListProductChoicesFromCheckBoxes('displayProduct')">GlutenFree<br>
+		<input type="checkbox" name="dietCheckBox" value="Organic" onchange="populateListProductChoicesFromCheckBoxes('displayProduct')">Organic<br>
 	</form>
 </div>
 
@@ -51,5 +52,8 @@
 <script src="scripts/groceries.js"></script>
 <script src="scripts/main.js"></script>
 
+<footer>
+<p id="signature">Site Web conçu par Firas Jribi</p>
+</footer>
 </body>
 </html>
