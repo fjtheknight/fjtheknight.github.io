@@ -16,6 +16,7 @@
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
+  font-size: 111.5%;
 }
 
 /* Change background color of buttons on hover */
@@ -42,4 +43,10 @@ footer {
   padding: 3px;
   background-color: DarkSalmon;
   color: white;
+}
+
+
+
+body{
+    font-size: 150%;
 }
