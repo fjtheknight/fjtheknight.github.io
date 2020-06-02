@@ -7,6 +7,7 @@ var products = [
 		name: "brocoli",
 		vegetarian: true,
 		glutenFree: true,
+		lactoseFree: true,
 		organic: false,
 		price: 1.99
 	},
@@ -14,13 +15,15 @@ var products = [
 		name: "bread",
 		vegetarian: true,
 		glutenFree: false,
-		organic: false,
+		lactoseFree: true,
+		organic: true,
 		price: 2.35
 	},
 	{
 		name: "salmon",
 		vegetarian: false,
 		glutenFree: true,
+		lactoseFree: true,
 		organic: false,
 		price: 18.00
 	},
@@ -28,6 +31,7 @@ var products = [
 		name: "organic salami",
 		vegetarian: false,
 		glutenFree: true,
+		lactoseFree: true,
 		organic: true,
 		price: 15.65
 	},
@@ -35,6 +39,7 @@ var products = [
 		name: "ricotta",
 		vegetarian: false,
 		glutenFree: true,
+		lactoseFree: false,
 		organic: false,
 		price: 10.00
 	},
@@ -42,6 +47,7 @@ var products = [
 		name: "mozzarella",
 		vegetarian: false,
 		glutenFree: true,
+		lactoseFree: false,
 		organic: false,
 		price: 7.55
 	},
@@ -49,6 +55,7 @@ var products = [
 		name: "organic onion",
 		vegetarian: true,
 		glutenFree: true,
+		lactoseFree: true,
 		organic: true,
 		price: 2.89
 	},
@@ -56,6 +63,7 @@ var products = [
 		name: "garlic",
 		vegetarian: true,
 		glutenFree: true,
+		lactoseFree: true,
 		organic: false,
 		price: 5.35
 	},
@@ -63,6 +71,7 @@ var products = [
 		name: "organic turmeric",
 		vegetarian: true,
 		glutenFree: true,
+		lactoseFree: true,
 		organic: true,
 		price: 22.55
 	},
@@ -70,8 +79,25 @@ var products = [
 		name: "salt",
 		vegetarian: true,
 		glutenFree: true,
+		lactoseFree: true,
 		organic: false,
 		price: 1.00
+	},
+	{
+		name: "organic beef",
+		vegetarian: false,
+		glutenFree: true,
+		lactoseFree: true,
+		organic: true,
+		price: 22.00
+	},
+	{
+		name: "almond milk",
+		vegetarian: true,
+		glutenFree: true,
+		lactoseFree: true,
+		organic: false,
+		price: 11.00
 	}
 ];
 	
@@ -88,17 +114,20 @@ function restrictListProducts(prods, restrictions) {
 
 	let products_description = [];
 
-
-		if (restrictions.includes("Vegetarian")){
-			prods = prods.filter(function(value, index, arr){ return value.vegetarian == true;});
-		}
-		if (restrictions.includes("GlutenFree")){
-			prods = prods.filter(function(value, index, arr){ return value.glutenFree == true;});
-		}
-		if (restrictions.includes("Organic")){
-			prods = prods.filter(function(value, index, arr){ return value.organic == true;});
-		}
-		console.log(prods);
+	// https://www.w3schools.com/jsref/jsref_filter.asp
+	if (restrictions.includes("Vegetarian")){
+		prods = prods.filter(function(value, index, arr){ return value.vegetarian == true;});
+	}
+	if (restrictions.includes("GlutenFree")){
+		prods = prods.filter(function(value, index, arr){ return value.glutenFree == true;});
+	}
+	if (restrictions.includes("Organic")){
+		prods = prods.filter(function(value, index, arr){ return value.organic == true;});
+	}
+	if (restrictions.includes("LactoseFree")){
+		prods = prods.filter(function(value, index, arr){ return value.lactoseFree == true;});
+	}
+	console.log(prods);
 
 	for (let i=0; i<prods.length; i+=1) {
 		products_description.push(prods[i].name);
