@@ -1,4 +1,5 @@
 <!-- https://www.w3schools.com/howto/howto_js_navbar_sticky.asp -->
+<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_portfolio_gallery_filter -->
 
 <!DOCTYPE html>
 <html>
@@ -22,15 +23,127 @@
 </div>
 
 <div class="content">
-  <h3>Sticky Navigation Example</h3>
-  <p>The navbar will stick to the top when you reach its scroll position.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+</head>
+<body>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<div class="fixthis">
+  <h3>Preferences</h3>
+	<form id="dietSelect">
+		<input type="checkbox" name="dietCheckBox" value="Vegetarian" onchange="populateListProductChoicesFromCheckBoxes('displayProduct')">Vegetarian<br>
+		<input type="checkbox" name="dietCheckBox" value="GlutenFree" onchange="populateListProductChoicesFromCheckBoxes('displayProduct')">GlutenFree<br>
+		<input type="checkbox" name="dietCheckBox" value="Organic" onchange="populateListProductChoicesFromCheckBoxes('displayProduct')">Organic<br>
+		<input type="checkbox" name="dietCheckBox" value="LactoseFree" onchange="populateListProductChoicesFromCheckBoxes('displayProduct')">LactoseFree<br>
+	</form>
+</div>
+
+<h3>Categories</h3>
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('meat-seafood')"> Meat and Seafood</button>
+  <button class="btn" onclick="filterSelection('fruits-vegetables')"> Fruits and Vegetables</button>
+  <button class="btn" onclick="filterSelection('dairy-eggs')"> Dairy and Eggs</button>
+  <button class="btn" onclick="filterSelection('bakery')"> Bakery</button>
+  <button class="btn" onclick="filterSelection('frozen')"> Frozen Food</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column meat-seafood">
+    <div class="content">
+      <img src="images/placeholder.png" alt="Mountains" style="width:100%">
+      <h4>meat-seafood</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column meat-seafood">
+    <div class="content">
+    <img src="images/placeholder.png" alt="Lights" style="width:100%">
+      <h4>meat-seafood</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column meat-seafood">
+    <div class="content">
+    <img src="images/placeholder.png" alt="Nature" style="width:100%">
+      <h4>meat-seafood</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  
+  <div class="column fruits-vegetables">
+    <div class="content">
+      <img src="images/placeholder.png" alt="Car" style="width:100%">
+      <h4>fruits-vegetables</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column fruits-vegetables">
+    <div class="content">
+    <img src="images/placeholder.png" alt="Car" style="width:100%">
+      <h4>fruits-vegetables</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column fruits-vegetables">
+    <div class="content">
+    <img src="images/placeholder.png" alt="Car" style="width:100%">
+      <h4>fruits-vegetables</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column bakery">
+    <div class="content">
+      <img src="images/placeholder.png" alt="Car" style="width:100%">
+      <h4>bakery</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column bakery">
+    <div class="content">
+    <img src="images/placeholder.png" alt="Car" style="width:100%">
+      <h4>bakery</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column frozen">
+    <div class="content">
+    <img src="images/placeholder.png" alt="Car" style="width:100%">
+      <h4>frozen</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column frozen">
+    <div class="content">
+    <img src="images/placeholder.png" alt="Car" style="width:100%">
+      <h4>frozen</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column dairy-eggs">
+    <div class="content">
+    <img src="images/placeholder.png" alt="Car" style="width:100%">
+      <h4>dairy-eggs</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column dairy-eggs">
+    <div class="content">
+    <img src="images/placeholder.png" alt="Car" style="width:100%">
+      <h4>dairy-eggs</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+
+<!-- END MAIN -->
+</div>
+
 </div>
 
 <script src="scripts/groceries.js"></script>
