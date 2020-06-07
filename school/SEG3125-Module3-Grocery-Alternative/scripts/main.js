@@ -32,6 +32,7 @@ function populateListProductChoices(diets, slct2) {
 	
 	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
     s2.innerHTML = "";
+    s2.class = "row";
 		//console.log(s1);
 	// obtain a reduced list of products based on restrictions
 	console.log("diets");
@@ -54,16 +55,46 @@ function populateListProductChoices(diets, slct2) {
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
 		checkbox.value = productName;
-		s2.appendChild(checkbox);
+		//s2.appendChild(checkbox);
 		
 		// create a label for the checkbox, and also add in HTML DOM
-		var label = document.createElement('label')
+		var label = document.createElement('label');
 		label.htmlFor = productName;
 		label.appendChild(document.createTextNode(productName+ ' (' + products.find(product => product.name == productName).price + ')'));
-		s2.appendChild(label);
+		//s2.appendChild(label);
 		
 		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br"));    
+		//s2.appendChild(document.createElement("br"));    
+
+
+		var productCard = document.createElement("div");
+		productCard.className += "column "+products.find(product => product.name == productName).category;
+
+		var contentDiv = document.createElement("div");
+		contentDiv.className += "content";
+
+		var productImg = document.createElement("img");
+		productImg.src = "images/placeholder.png";
+		productImg.style = "width:100%";
+		productImg.alt = "productImg";
+
+
+		contentDiv.appendChild(productImg);
+		contentDiv.appendChild(label);
+		productCard.appendChild(contentDiv);
+		
+
+
+		s2.appendChild(productCard);
+		/*
+		  <div class="column meat-seafood">
+		    <div class="content">
+		      <img src="images/placeholder.png" alt="Mountains" style="width:100%">
+		      <h4>meat-seafood</h4>
+		      <p>Lorem ipsum dolor..</p>
+		    </div>
+		  </div>
+		*/
 	}
 }
 

@@ -5,6 +5,7 @@
 var products = [
 	{
 		name: "brocoli",
+		category: "fruits-vegetables",
 		vegetarian: true,
 		glutenFree: true,
 		lactoseFree: true,
@@ -13,6 +14,7 @@ var products = [
 	},
 	{
 		name: "bread",
+		category: "bakery-spices",
 		vegetarian: true,
 		glutenFree: false,
 		lactoseFree: true,
@@ -21,6 +23,7 @@ var products = [
 	},
 	{
 		name: "salmon",
+		category: "meat-seafood",
 		vegetarian: false,
 		glutenFree: true,
 		lactoseFree: true,
@@ -29,6 +32,7 @@ var products = [
 	},
 	{
 		name: "organic salami",
+		category: "meat-seafood",
 		vegetarian: false,
 		glutenFree: true,
 		lactoseFree: true,
@@ -37,6 +41,7 @@ var products = [
 	},
 	{
 		name: "ricotta",
+		category: "dairy-eggs",
 		vegetarian: false,
 		glutenFree: true,
 		lactoseFree: false,
@@ -45,6 +50,7 @@ var products = [
 	},
 	{
 		name: "mozzarella",
+		category: "dairy-eggs",
 		vegetarian: false,
 		glutenFree: true,
 		lactoseFree: false,
@@ -53,6 +59,7 @@ var products = [
 	},
 	{
 		name: "organic onion",
+		category: "fruits-vegetables",
 		vegetarian: true,
 		glutenFree: true,
 		lactoseFree: true,
@@ -61,6 +68,7 @@ var products = [
 	},
 	{
 		name: "garlic",
+		category: "fruits-vegetables",
 		vegetarian: true,
 		glutenFree: true,
 		lactoseFree: true,
@@ -69,6 +77,7 @@ var products = [
 	},
 	{
 		name: "organic turmeric",
+		category: "bakery-spices",
 		vegetarian: true,
 		glutenFree: true,
 		lactoseFree: true,
@@ -77,6 +86,7 @@ var products = [
 	},
 	{
 		name: "salt",
+		category: "bakery-spices",
 		vegetarian: true,
 		glutenFree: true,
 		lactoseFree: true,
@@ -85,6 +95,7 @@ var products = [
 	},
 	{
 		name: "organic beef",
+		category: "meat-seafood",
 		vegetarian: false,
 		glutenFree: true,
 		lactoseFree: true,
@@ -93,11 +104,21 @@ var products = [
 	},
 	{
 		name: "almond milk",
+		category: "dairy-eggs",
 		vegetarian: true,
 		glutenFree: true,
 		lactoseFree: true,
 		organic: false,
 		price: 11.00
+	},
+	{
+		name: "eggs",
+		category: "dairy-eggs",
+		vegetarian: true,
+		glutenFree: true,
+		lactoseFree: true,
+		organic: false,
+		price: 1.00
 	}
 ];
 	
