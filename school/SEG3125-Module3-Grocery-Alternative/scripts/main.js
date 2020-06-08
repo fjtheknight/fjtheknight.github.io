@@ -1,8 +1,16 @@
+var activeCategory = "all";
+
+// function to execute on site load
+function initSite(){
+	populateListProductChoicesFromCheckBoxes('displayProduct');
+	filterSelection("all");
+	openInfo('Shop');
+}
 
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
-function openInfo(evt, tabName) {
+function openInfo(tabName) {
 
 	// Get all elements with class="tabcontent" and hide them
 	tabcontent = document.getElementsByClassName("tabcontent");
@@ -18,8 +26,12 @@ function openInfo(evt, tabName) {
 
 	// Show the current tab, and add an "active" class to the button that opened the tab
 	document.getElementById(tabName).style.display = "block";
-	evt.currentTarget.className += " active";
+	document.getElementById(tabName+"-nav").className += " active";
 
+	if(tabName == "Shop"){
+		populateListProductChoicesFromCheckBoxes('displayProduct');
+		filterSelection("all");
+	}
 }
 
 
@@ -71,16 +83,41 @@ function populateListProductChoices(diets, slct2) {
 		productCard.className += "column "+products.find(product => product.name == productName).category;
 
 		var contentDiv = document.createElement("div");
-		contentDiv.className += "content";
+		contentDiv.className += "product-card-content";
 
 		var productImg = document.createElement("img");
-		productImg.src = "images/placeholder.png";
-		productImg.style = "width:100%";
+		productImg.src = products.find(product => product.name == productName).imgURL;
+		//productImg.style = "width:100%";
 		productImg.alt = "productImg";
+
+		var button = document.createElement("button");
+		button.innerHTML = 'add to cart';
+		button.value = productName;
+		button.style.backgroundColor = "#90ee90";
+		button.onclick = function(){
+			if(cartProducts.includes(this.value)){
+				const index = cartProducts.indexOf(this.value);
+				if (index > -1) {
+				  cartProducts.splice(index, 1);
+				}
+				alert('The product: '+this.value+' has been removed from your cart');
+				this.innerHTML = 'add to cart';
+				this.style.backgroundColor = "#90ee90";
+			} else {
+				cartProducts.push(this.value);
+				alert('The product: '+this.value+' has been added to your cart');
+				this.innerHTML = 'remove from cart';
+				this.style.backgroundColor = "#ffccbb";
+			}
+			console.log(cartProducts);
+			selectedItems();
+
+		};
 
 
 		contentDiv.appendChild(productImg);
 		contentDiv.appendChild(label);
+		contentDiv.appendChild(button);
 		productCard.appendChild(contentDiv);
 		
 
@@ -112,6 +149,7 @@ function populateListProductChoicesFromCheckBoxes(slct2) {
 
 
     populateListProductChoices(diets, slct2)
+    filterSelection(activeCategory);
 
 }
 
@@ -121,7 +159,7 @@ function populateListProductChoicesFromCheckBoxes(slct2) {
 
 function selectedItems(){
 	
-	var ele = document.getElementsByName("product");
+	//var ele = document.getElementsByName("product");
 	var chosenProducts = [];
 	
 	var c = document.getElementById('displayCart');
@@ -131,12 +169,12 @@ function selectedItems(){
 	var para = document.createElement("P");
 	para.innerHTML = "You selected : ";
 	para.appendChild(document.createElement("br"));
-	for (i = 0; i < ele.length; i++) { 
-		if (ele[i].checked) {
-			para.appendChild(document.createTextNode(ele[i].value));
+	for (i = 0; i < cartProducts.length; i++) { 
+
+			para.appendChild(document.createTextNode(cartProducts[i]));
 			para.appendChild(document.createElement("br"));
-			chosenProducts.push(ele[i].value);
-		}
+			chosenProducts.push(cartProducts[i]);
+		
 	}
 		
 	// add paragraph and total price
@@ -194,8 +232,17 @@ function myFunction() {
 
 
 // script for the grid
-filterSelection("all")
 function filterSelection(c) {
+	// Get all elements with class="tablinks" and remove the class "active"
+	btns = document.getElementsByClassName("btn");
+	for (i = 0; i < btns.length; i++) {
+		btns[i].className = btns[i].className.replace(" active", "");
+	}
+
+	document.getElementById(c+"-btn").className += " active";
+
+
+	activeCategory = c;
   var x, i;
   x = document.getElementsByClassName("column");
   if (c == "all") c = "";
@@ -236,4 +283,11 @@ for (var i = 0; i < btns.length; i++) {
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
+}
+
+
+function clearCart(){
+	cartProducts = [];
+	selectedItems();
+
 }

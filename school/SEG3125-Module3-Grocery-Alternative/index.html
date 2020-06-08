@@ -12,23 +12,34 @@
 <div class="header">
   <h2>FJ GROCERY SHOP</h2>
   <p>Don't Waste Your Time Shopping Elsewhere</p>
+  <h6>Designed by fjtheknight</h6>
 </div>
 
 <div id="navbar">
-  <a class="active" href="javascript:void(0)">Shop</a>
-  <a href="javascript:void(0)">Deals</a>
-  <a href="javascript:void(0)">Flyers</a>
-  <a href="javascript:void(0)">Profile</a>
-  <a href="javascript:void(0)">Cart</a>
+  <a id="Shop-nav" class="tablinks active" onclick="openInfo('Shop')">Shop</a>
+  <a id="Deals-nav" class="tablinks" onclick="openInfo('Deals')">Deals</a>
+  <a id="Flyers-nav" class="tablinks" onclick="openInfo('Flyers')">Flyers</a>
+  <a id="Profile-nav" class="tablinks" onclick="openInfo('Profile')">Profile</a>
+  <a id="Cart-nav" class="tablinks" onclick="openInfo('Cart')">Cart</a>
 </div>
 
 <div class="content">
 </head>
-<body>
+<body onload="initSite()">
 
 <!-- MAIN (Center website) -->
 <div class="main">
 
+	<div id="Deals" class="tabcontent"></div>
+	<div id="Flyers" class="tabcontent"></div>
+	<div id="Profile" class="tabcontent"></div>
+	<div id="Cart" class="tabcontent">
+		<div id="displayCart"></div>
+		<button onclick="clearCart()">clear cart</button>
+		<button>checkout</button>
+	</div>
+
+<div id="Shop" class="tabcontent">
 <div class="fixthis">
   <h3>Preferences</h3>
 	<form id="dietSelect">
@@ -42,17 +53,18 @@
 <h3>Categories</h3>
 
 <div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('meat-seafood')"> Meat and Seafood</button>
-  <button class="btn" onclick="filterSelection('fruits-vegetables')"> Fruits and Vegetables</button>
-  <button class="btn" onclick="filterSelection('dairy-eggs')"> Dairy and Eggs</button>
-  <button class="btn" onclick="filterSelection('bakery-spices')"> Bakery and Spices</button>
-  <button class="btn" onclick="filterSelection('frozen')"> Frozen Food</button>
+  <button id="all-btn" class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button id="meat-seafood-btn" class="btn" onclick="filterSelection('meat-seafood')"> Meat and Seafood</button>
+  <button id="fruits-vegetables-btn" class="btn" onclick="filterSelection('fruits-vegetables')"> Fruits and Vegetables</button>
+  <button id="dairy-eggs-btn" class="btn" onclick="filterSelection('dairy-eggs')"> Dairy and Eggs</button>
+  <button id="bakery-spices-btn" class="btn" onclick="filterSelection('bakery-spices')"> Bakery and Spices</button>
+  <button id="frozen-btn" class="btn" onclick="filterSelection('frozen')"> Frozen Food</button>
 </div>
 
 <!-- Portfolio Gallery Grid -->
 <div class="row" id="displayProduct">
 <!-- END GRID -->
+</div>
 </div>
 
 <!-- END MAIN -->

@@ -1,4 +1,9 @@
 	
+// Array of products in cart
+ var cartProducts = [
+
+ ];
+
 // Array of products, each product is an object with different fieldset
 // A set of ingredients should be added to products		 
 
@@ -10,6 +15,7 @@ var products = [
 		glutenFree: true,
 		lactoseFree: true,
 		organic: false,
+		imgURL: "https://i5.walmartimages.ca/images/Large/094/505/6000200094505.jpg",
 		price: 1.99
 	},
 	{
@@ -18,7 +24,8 @@ var products = [
 		vegetarian: true,
 		glutenFree: false,
 		lactoseFree: true,
-		organic: true,
+		organic: false,
+		imgURL: "https://i5.walmartimages.ca/images/Enlarge/486/216/6000197486216.jpg",
 		price: 2.35
 	},
 	{
@@ -28,16 +35,18 @@ var products = [
 		glutenFree: true,
 		lactoseFree: true,
 		organic: false,
+		imgURL: "https://i5.walmartimages.ca/images/Large/035/660/6000200035660.jpg",
 		price: 18.00
 	},
 	{
-		name: "organic salami",
-		category: "meat-seafood",
-		vegetarian: false,
+		name: "organic banana",
+		category: "fruits-vegetables",
+		vegetarian: true,
 		glutenFree: true,
 		lactoseFree: true,
 		organic: true,
-		price: 15.65
+		imgURL: "https://i5.walmartimages.ca/images/Enlarge/201/6_r/6000191272016_R.jpg",
+		price: 4.65
 	},
 	{
 		name: "ricotta",
@@ -46,6 +55,7 @@ var products = [
 		glutenFree: true,
 		lactoseFree: false,
 		organic: false,
+		imgURL: "https://i5.walmartimages.ca/images/Large/065/588/6000200065588.jpg",
 		price: 10.00
 	},
 	{
@@ -55,6 +65,7 @@ var products = [
 		glutenFree: true,
 		lactoseFree: false,
 		organic: false,
+		imgURL: "https://i5.walmartimages.ca/images/Enlarge/577/878/6000199577878.jpg",
 		price: 7.55
 	},
 	{
@@ -64,6 +75,7 @@ var products = [
 		glutenFree: true,
 		lactoseFree: true,
 		organic: true,
+		imgURL: "https://i5.walmartimages.ca/images/Enlarge/158/998/6000200158998.jpg",
 		price: 2.89
 	},
 	{
@@ -73,6 +85,7 @@ var products = [
 		glutenFree: true,
 		lactoseFree: true,
 		organic: false,
+		imgURL: "https://i5.walmartimages.ca/images/Large/273/739/6000191273739.jpg",
 		price: 5.35
 	},
 	{
@@ -82,6 +95,7 @@ var products = [
 		glutenFree: true,
 		lactoseFree: true,
 		organic: true,
+		imgURL: "https://i5.walmartimages.ca/images/Enlarge/685/152/6000198685152.jpg",
 		price: 22.55
 	},
 	{
@@ -91,15 +105,17 @@ var products = [
 		glutenFree: true,
 		lactoseFree: true,
 		organic: false,
+		imgURL: "https://i5.walmartimages.ca/images/Large/001/055/999999-066010001055.jpg",
 		price: 1.00
 	},
 	{
-		name: "organic beef",
+		name: "ground beef",
 		category: "meat-seafood",
 		vegetarian: false,
 		glutenFree: true,
 		lactoseFree: true,
-		organic: true,
+		organic: false,
+		imgURL: "https://i5.walmartimages.ca/images/Large/034/409/6000200034409.jpg",
 		price: 22.00
 	},
 	{
@@ -109,6 +125,7 @@ var products = [
 		glutenFree: true,
 		lactoseFree: true,
 		organic: false,
+		imgURL: "https://i5.walmartimages.ca/images/Large/724/526/6000198724526.jpg",
 		price: 11.00
 	},
 	{
@@ -118,7 +135,38 @@ var products = [
 		glutenFree: true,
 		lactoseFree: true,
 		organic: false,
-		price: 1.00
+		imgURL: "https://i5.walmartimages.ca/images/Large/924/227/6000197924227.jpg",
+		price: 3.00
+	},
+	{
+		name: "organic eggs",
+		category: "dairy-eggs",
+		vegetarian: true,
+		glutenFree: true,
+		lactoseFree: true,
+		organic: true,
+		imgURL: "https://i5.walmartimages.ca/images/Enlarge/213/706/31213706.jpg",
+		price: 5.00
+	},
+	{
+		name: "frozen spinach",
+		category: "frozen",
+		vegetarian: true,
+		glutenFree: true,
+		lactoseFree: true,
+		organic: false,
+		imgURL: "https://i5.walmartimages.ca/images/Large/645/383/6000199645383.jpg",
+		price: 2.00
+	},
+	{
+		name: "frozen pizza",
+		category: "frozen",
+		vegetarian: false,
+		glutenFree: false,
+		lactoseFree: false,
+		organic: false,
+		imgURL: "https://i5.walmartimages.ca/images/Large/883/645/999999-71921883645.jpg",
+		price: 6.00
 	}
 ];
 	
