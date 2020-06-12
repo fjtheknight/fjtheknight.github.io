@@ -1,0 +1,309 @@
+<!--  https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_datetime-local-->
+<!--  https://www.w3schools.com/bootstrap4/bootstrap_forms.asp-->
+<!--  https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_card_image&stacked=h-->
+<!--  https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_card_deck&stacked=h-->
+<!--  https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_modal&stacked=h-->
+
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BikeRenew</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+
+    <!-- Your own additional style sheet --> 
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container-md p-3 my-3 border bg-dark text-white text-center ">
+        <img id="img-left" class="img-fluid" src="https://cdn.avopix.com/photos/detail/d_58308_bicycle-chain-garbage-old-time.jpeg">
+        <h1>Bienvenue à BikeRenew</h1>
+        <p>Donnez une nouvelle vie à votre vélo</p>
+        <img id="img-right" class="img-fluid" src="https://lh3.googleusercontent.com/proxy/gBNEoz-bZbf-BWmh4k16VeFw87NaXSDbOHjMn8RsNjBw8wkPw2MmOuI0daND996KZSmJKA45B9zfECzDcaJskJPfDKBKZRsDleQ1XI1-9zZ1_ZoxiAMpSM6uRAZWveoeWl_mDzlPYVleiJozlKysS7lu2Vg">
+    </div>
+
+    <div class="container-md p-3 my-3 bg-light ">
+
+        <h2>Nos services</h2>
+        <div class="card-deck">
+            <div class="card"  style="width:400px">
+            <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSnPNUemmSrL6NmZAhC6naJJK4f-Up4aurfDxorlutmY7D5inYL&usqp=CAU" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Renouvellement vélo de route</h4>
+                    <ul class="card-text">
+                        <li>Désassemblage et néttoyage complet</li>
+                        <li>Mise au point complète</li>
+                        <li>Lubrification des points pivots</li>
+                        <li>Nettoyage et graissage des moyeux</li>
+                        <li>Alignement complet des roues</li>
+                    </ul>
+                    
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#veloderoute">Réservez</a>
+                    <p class="card-text prix">$199</p>
+                </div>
+            </div>
+
+            <div class="card"  style="width:400px">
+            <img class="card-img-top" src="https://cdn.pixabay.com/photo/2017/10/17/17/00/sports-2861288_960_720.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Renouvellement vélo VTT</h4>
+                    <ul class="card-text">
+                        <li>Désassemblage et néttoyage complet</li>
+                        <li>Mise au point complète</li>
+                        <li>Lubrification des points pivots</li>
+                        <li>Nettoyage et graissage des moyeux</li>
+                        <li>Alignement complet des roues</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#velovtt">Réservez</a>
+                    <p class="card-text prix">$249</p>
+                </div>
+            </div>
+
+            <div class="card"  style="width:400px">
+            <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/c/c6/A_mountain_bike_styled_e-bike%2C_Cyclotricity_Stealth.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Renouvellement vélo électrique</h4>
+                    <ul class="card-text">
+                        <li>Désassemblage et néttoyage complet</li>
+                        <li>Mise au point complète</li>
+                        <li>Lubrification des points pivots</li>
+                        <li>Nettoyage et graissage des moyeux</li>
+                        <li>Alignement complet des roues</li>
+                        <li>Révision moteur électrique</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#veloelectrique">Réservez</a>
+                    <p class="card-text prix">$299</p>
+                </div>
+            </div>
+
+        </div >
+
+
+
+          <!-- Modal  velo de route -->
+          <div class="modal" id="veloderoute">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Réservation Renouvellement Vélo de Route</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="">
+                      <div class="form-group">
+                        <label for="name">Nom:</label>
+                        <input type="text" class="form-control" placeholder="Nom" id="nom">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" placeholder="Email" id="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="phone">Numéro de téléphone:</label>
+                        <input type="téléphone" class="form-control" placeholder="+1" id="phone">
+                      </div>
+                      <div class="form-group">
+                        <label for="time">Date et heure:</label>
+                        <input type="datetime-local" class="form-control" id="time">
+                      </div>
+                      <div class="form-group">
+                        <label for="credit-card">Carte de crédit:</label>
+                        <input type="text" class="form-control" id="credit-card">
+                      </div>
+                      <br>
+                      <br>
+                      <p class="prix">$199</p>
+                      <button type="submit" class="btn btn-primary">Confirmer réservation</button>
+                    </form>
+                </div>
+
+                
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Modal  velo vtt -->
+          <div class="modal" id="velovtt">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Réservation Renouvellement Vélo VTT</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="">
+                      <div class="form-group">
+                        <label for="name">Nom:</label>
+                        <input type="text" class="form-control" placeholder="Nom" id="nom">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" placeholder="Email" id="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="phone">Numéro de téléphone:</label>
+                        <input type="téléphone" class="form-control" placeholder="+1" id="phone">
+                      </div>
+                      <div class="form-group">
+                        <label for="time">Date et heure:</label>
+                        <input type="datetime-local" class="form-control" id="time">
+                      </div>
+                      <div class="form-group">
+                        <label for="credit-card">Carte de crédit:</label>
+                        <input type="text" class="form-control" id="credit-card">
+                      </div>
+                      <br>
+                      <br>
+                      <p class="prix">$249</p>
+                      <button type="submit" class="btn btn-primary">Confirmer réservation</button>
+                    </form>
+                </div>
+
+                
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Modal  velo electrique -->
+          <div class="modal" id="veloelectrique">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Réservation Renouvellement Vélo Electrique</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="">
+                      <div class="form-group">
+                        <label for="name">Nom:</label>
+                        <input type="text" class="form-control" placeholder="Nom" id="nom">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" placeholder="Email" id="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="phone">Numéro de téléphone:</label>
+                        <input type="téléphone" class="form-control" placeholder="+1" id="phone">
+                      </div>
+                      <div class="form-group">
+                        <label for="time">Date et heure:</label>
+                        <input type="datetime-local" class="form-control" id="time">
+                      </div>
+                      <div class="form-group">
+                        <label for="credit-card">Carte de crédit:</label>
+                        <input type="text" class="form-control" id="credit-card">
+                      </div>
+                      <br>
+                      <br>
+                      <p class="prix">$299</p>
+                      <button type="submit" class="btn btn-primary">Confirmer réservation</button>
+                    </form>
+                </div>
+
+                
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        <br>
+        <br>
+        <h2>Nos adresses</h2>
+        <div class="card-deck">
+            <!--Google map https://mdbootstrap.com/docs/jquery/javascript/google-maps/ -->
+            <div id="map-container-google-1" class="card z-depth-1-half map-container container-md p-3 my-3 bg-light">
+              <iframe src="https://maps.google.com/maps?q=gatineau&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                style="border:0" allowfullscreen></iframe>
+            </div>
+
+            <!--Google Maps-->
+        </div>
+
+        <br>
+        <br>
+        <h2>Nos experts</h2>
+        <div class="card-deck">
+            <div class="card"  style="width:400px">
+            <img class="card-img-top" src="https://media.defense.gov/2016/Jul/22/2001580592/-1/-1/0/160717-F-EQ901-062.JPG" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Mark Aléatoire</h4>
+                    <ul class="card-text">
+                        <li>Trente ans d'expérience</li>
+                        <li>Ingénieur en génie mécanique</li>
+                        <li>Spécialité vélo de route</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card"  style="width:400px">
+            <img class="card-img-top" src="https://bostonglobe-prod.cdn.arcpublishing.com/resizer/FiV97nQ_tYn-kGG68P9hKaiIeh8=/1440x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/Z5JYISX5VQI6JESOM276B6VO7Y.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Alessandro Aléatoire</h4>
+                    <ul class="card-text">
+                        <li>Quarente trois ans d'expérience</li>
+                        <li>Ancien ingénieur chez Caravallo</li>
+                        <li>Spécialité vélo VTT</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card"  style="width:400px">
+            <img class="card-img-top" src="https://www.racv.com.au/content/dam/racv/images/royalauto-2019/moving/cycle-motorcycle-pt/bike-maintenance-tips/bike-maintenance.jpg.transform/heroMob/image.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Patricia Aléatoire</h4>
+                    <ul class="card-text">
+                        <li>Quinze ans d'expérience</li>
+                        <li>Ingénieur en génie électrique</li>
+                        <li>Spécialité vélo électrique</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small container-md p-3 my-3 border bg-dark text-white">
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright: 
+      <div class="footer-copyright text-center py-3">Site web conçu par Firas Jribi 
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+</body>
+</html>

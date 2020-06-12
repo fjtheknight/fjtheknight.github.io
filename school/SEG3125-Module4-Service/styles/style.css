@@ -1,0 +1,52 @@
+.card-img-top{
+	height: 200px;
+}
+
+
+.btn-primary {
+	border: none;
+	background-color: red;
+	position: absolute;
+	right:    0;
+	bottom:   0;
+}
+
+.btn-primary:hover {
+	background-color: orange;
+}
+
+.btn-primary:focus {
+	background-color: red;
+}
+
+.prix{
+	color: green;
+	font-size: 200%;
+	position: absolute;
+	left:    0;
+	bottom:   0;
+	padding-left: 15px;
+}
+
+#img-left{
+	position: absolute;
+	left:    0;
+	bottom:   0;
+	height: 100%;
+	width: 35%;
+	  -webkit-mask-image:-webkit-gradient(linear, left top,right bottom,  from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+      mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+#img-right{
+	position: absolute;
+	right:    0;
+	bottom:   0;
+	height: 100%;
+	width: 35%;
+	  -webkit-mask-image:-webkit-gradient(linear, right bottom, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+      mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+.container-md{
+	position: relative;
+}
