@@ -3,6 +3,7 @@
 <!--  https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_card_image&stacked=h-->
 <!--  https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_card_deck&stacked=h-->
 <!--  https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_modal&stacked=h-->
+<!-- https://stackoverflow.com/questions/48534229/what-is-the-correct-input-type-for-credit-card-numbers -->
 
 <!DOCTYPE html>
 <html>
@@ -22,6 +23,20 @@
 
     <!-- Your own additional style sheet --> 
     <link href="styles/style.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use JQuery as well as JQueryUI library -->
+    <!-- which is built on top of JQuery and offers additional possibilities -->
+    <!-- For example, JQuery UI has a datepicker which is popular and that we can use -->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+    <!-- Your own script -->
+    <script src="scripts/service.js"></script>
+    <script src="scripts/main.js"></script>
+
+    <!-- Your own additional style sheet -->
 </head>
 
 <body>
@@ -48,7 +63,7 @@
                         <li>Alignement complet des roues</li>
                     </ul>
                     
-                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#veloderoute">Réservez</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#veloderoute" onclick="appendListOfExpertsToForm()">Réservez</a>
                     <p class="card-text prix">$199</p>
                 </div>
             </div>
@@ -103,7 +118,7 @@
                 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form action="">
+                    <form id="veloderoute-form" action="">
                       <div class="form-group">
                         <label for="name">Nom:</label>
                         <input type="text" class="form-control" placeholder="Nom" id="nom">
@@ -114,15 +129,26 @@
                       </div>
                       <div class="form-group">
                         <label for="phone">Numéro de téléphone:</label>
-                        <input type="téléphone" class="form-control" placeholder="+1" id="phone">
+                        <input type="tel" class="form-control" placeholder="+1 xxx xxx xxxx" id="phone">
                       </div>
                       <div class="form-group">
                         <label for="time">Date et heure:</label>
-                        <input type="datetime-local" class="form-control" id="time">
+                        <input type="date" class="form-control" id="time">
                       </div>
                       <div class="form-group">
-                        <label for="credit-card">Carte de crédit:</label>
-                        <input type="text" class="form-control" id="credit-card">
+                        <label for="expert">Expert:</label>
+                        <select  name="veloderoute-select-expert" id="veloderoute-select-expert"></select>
+                      </div>
+                      <hr>
+                      <div class="form-group">
+                        <label for="credit-card">Numéro de carte de crédit:</label>
+                        <input class="form-control" id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+                        <br>
+                        <label for="credit-card">CCV:</label>
+                        <input type="tel" class="form-control" id="credit-card-ccv" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="3" placeholder="xxx">
+                        <br>
+                        <label for="credit-card">Date d'expiration':</label>
+                        <input type="date" class="form-control" id="credit-card-date">
                       </div>
                       <br>
                       <br>
@@ -165,7 +191,7 @@
                       </div>
                       <div class="form-group">
                         <label for="time">Date et heure:</label>
-                        <input type="datetime-local" class="form-control" id="time">
+                        <input type="date" class="form-control" id="time">
                       </div>
                       <div class="form-group">
                         <label for="credit-card">Carte de crédit:</label>
@@ -212,7 +238,7 @@
                       </div>
                       <div class="form-group">
                         <label for="time">Date et heure:</label>
-                        <input type="datetime-local" class="form-control" id="time">
+                        <input type="date" class="form-control" id="time">
                       </div>
                       <div class="form-group">
                         <label for="credit-card">Carte de crédit:</label>
