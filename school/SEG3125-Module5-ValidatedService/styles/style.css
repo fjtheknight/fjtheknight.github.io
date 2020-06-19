@@ -47,6 +47,21 @@
 	  -webkit-mask-image:-webkit-gradient(linear, right bottom, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
       mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
 }
-.container-md{
+#top-page{
 	position: relative;
+}
+
+.navbar{
+	margin: 0px;
+}
+
+#navbar-container{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+
+
+.navbar-brand{
+	font-size: 200%;
 }
