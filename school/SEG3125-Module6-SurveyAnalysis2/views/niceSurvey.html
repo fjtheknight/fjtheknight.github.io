@@ -1,0 +1,116 @@
+<!--  Firas Jribi 300084463 fjtheknight -->
+<!-- https://github.com/carolinebarriere/carolinebarriere.github.io -->
+
+<html>
+  <head>
+    <title>Questionnaire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+  </head>
+  	
+	<div class="container-md p-3 my-3 border bg-dark text-white" id="survey">
+      <body>
+
+      <h1>Le site web de l'Université d'Ottawa, qu'est-ce que vous en pensez?</h1>
+
+      <h2>Qu'est-ce que vous pensez du site web de l'<a href="https://www.uottawa.ca/">Université d'Ottawa</a>?</h2>  
+
+      <br>
+      <br>
+
+      <div class="clickable-image">
+        <a href="https://www.uottawa.ca">
+          <img src="/images/uottawa.PNG" alt="https://www.uottawa.ca/" width="450" height="300">
+        </a>
+      </div>
+      
+
+      <br>
+      <br>
+
+      <div>
+        
+      </div class="form" id="myform-div">
+      <form id="myform" action="index.php" >
+      <br>
+      <br>
+
+
+        <div class="question">
+        <h2> Numero d'étudiant</h2>
+        <input type="text" name="prenom">
+
+        <br>
+        <br>
+        </div>  
+
+        <div class="question">
+          <h2> Je pense que le site web duniversitaire a besoin de réformation</h2>
+            <input type="radio" id="oui" name="booleen" value="oui">
+            <label for="oui">oui</label><br>
+            <input type="radio" id="non" name="booleen" value="non">
+            <label for="non">non</label><br>
+        </div>
+
+        <div class="question">
+          <h2> Au lieu de la couleur principale du site, je veux:</h2>
+          <br>
+          <select id="favorite">
+            <option value="blue" selected="selected">blue</option>
+            <option value="orange">orange</option>
+            <option value="vert">vert</option>
+          </select>
+        </div>
+          
+        <div class="question">
+          <h2> Je n'aime pas le site actuel parce que: </h2>
+          <input type="checkbox" name="raison" value="moche">il est moche<br>
+          <input type="checkbox" name="raison" value="fonts">les fonts sont peu visibles<br>
+          <input type="checkbox" name="raison" value="images">les images de fond ne sont pas agréables à voir<br>
+          
+          <br>
+
+        </div>
+        
+        <div class="question">
+          <h2> Je suis satisfait avec les site web de l'université: </h2>
+          <ul class="likert">
+            <li> Pas satisfait du tout </li>
+            <li><input type="radio" name="guilty" value="1" /></li>
+            <li><input type="radio" name="guilty" value="2" /></li>
+            <li><input type="radio" name="guilty" value="3" /></li>
+            <li><input type="radio" name="guilty" value="4" /></li>
+            <li><input type="radio" name="guilty" value="5" /></li>
+            <li> Très satisfait </li>
+          </ul>
+        </div>
+        
+        <br>
+        <br>
+        <div class="comment">
+          <h2> J'ai d'autres commentaires sur le site: </h2>
+          <textarea></textarea>
+        </div>
+        
+            
+        <br>
+        <br>
+            
+        <button id="submitButton" type="submit" class="button">
+          Soumettre
+        </button>
+        
+      </form>
+      <p id="signature">Site Web conçu par Firas Jribi</p>  
+
+      
+	<script src="/assets/action.js"></script>
+  </body>
+</html> 

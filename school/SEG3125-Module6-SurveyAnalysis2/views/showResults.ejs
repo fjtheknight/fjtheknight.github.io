@@ -1,0 +1,20 @@
+<html lang="en-US">
+<head>
+    <title>Survey Analysis</title>
+</head>
+
+<body>
+    <h1>Survey analysis</h1>
+    <h2>Student number</h2>
+    <ul>
+        <li><%= results[0].number %></li>
+        <li><%= results[0].reform.yes %></li>
+    </ul>
+
+    <div>
+        <% for (var i=0; i<results[0].number.length; i++){ %>
+            <li><%= results[0].number[i] %></li>
+        <%}%>
+    </div>
+</body>
+</html>
