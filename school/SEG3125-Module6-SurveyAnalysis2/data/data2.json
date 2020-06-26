@@ -3,6 +3,6 @@
 	"reform":{"yes":"2","no":"0"},
 	"color":{"green":"1","blue":"1","orange":"0"},
 	"dislike":{"whole":"1","images":"1","fonts":"0"},
-	"satisfaction":{"zero":"1","one":"1","two":"0","three":"0","four":"0"},
+	"satisfaction":{"one":"1","two":"0","three":"0","four":"0","five":"0"},
 	"comments":["ugly website"]
 }

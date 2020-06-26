@@ -10,7 +10,7 @@ function readData(fileName){
     return infoRead;
 }
 
-// read the data file
+// write the data file
 function writeData(info, fileName){
     data = JSON.stringify(info);
     fs.writeFileSync('./data/' + fileName + '.json', data);
@@ -19,12 +19,96 @@ function writeData(info, fileName){
 // update the data file, I use "name" to be equal to fruit, or animal or color
 // to match with the file names
 // I assume we always just add 1 to a single item
-function combineCounts(name, value){
-    // console.log(value);
-    info = readData(name);
+
+//https://stackoverflow.com/questions/2647867/how-can-i-determine-if-a-variable-is-undefined-or-null
+function combineCounts(value){
+    console.log("combineCounts");
+    console.log(value);
+    data = readData("data2");
+    console.log("data2 before");
+    console.log(data);
      // will be useful for text entry, since the item typed in might not be in the list
+
+     var number = value.number;
+     var reform = value.reform;
+     var color = value.color;
+     var dislike = value.dislike;
+     var satisfaction = value.satisfaction;
+     var comment = value.comment;
+
+
+    if(number != null || number != ""){
+        if(!data.number.includes(number)){
+            data.number.push(number);
+        }
+     }
+
+
+    if(reform != null || reform != ""){
+        if(reform == "yes"){
+            data.reform.yes = parseInt(data.reform.yes) + 1;
+        } else {
+            data.reform.no = parseInt(data.reform.no) + 1;
+        }
+     }
+
+
+    if(color != null || color != ""){
+        if(color == "blue"){
+            data.color.blue = parseInt(data.color.blue) + 1;
+        } else if(color == "green"){
+            data.color.green = parseInt(data.color.green) + 1;
+        } else {
+            data.color.orange = parseInt(data.color.orange) + 1;
+        }
+     }
+
+
+    if(dislike != null){
+        for (var i=0; i<dislike.length; i++){
+            if(dislike[i] == "whole"){
+                data.dislike.whole = parseInt(data.dislike.whole) + 1;
+            } else if(dislike[i] == "images"){
+                data.dislike.images = parseInt(data.dislike.images) + 1;
+            } else if(dislike[i] == "fonts"){
+                data.dislike.fonts = parseInt(data.dislike.fonts) + 1;
+            }
+        }
+     }
+
+
+    if(satisfaction != null || satisfaction != ""){
+        if(satisfaction == "1"){
+            data.satisfaction.one = parseInt(data.satisfaction.one) + 1;
+        } else if(satisfaction == "2"){
+            data.satisfaction.two = parseInt(data.satisfaction.two) + 1;
+        } else if(satisfaction == "3"){
+            data.satisfaction.three = parseInt(data.satisfaction.three) + 1;
+        } else if(satisfaction == "4"){
+            data.satisfaction.four = parseInt(data.satisfaction.four) + 1;
+        } else if(satisfaction == "5"){
+            data.satisfaction.five = parseInt(data.satisfaction.five) + 1;
+        }
+     }
+
+
+    if(comment != null || comment != ""){
+        if(!data.comments.includes(comment)){
+            data.comments.push(comment);
+        }
+     }
+
+
+
+
+
+    console.log("data2 after");
+    console.log(data);
+/*
     var found = 0;
     for (var i=0; i<info.length; i++){
+        console.log("loop");
+        console.log(info[i]);
         if (info[i][name] === value){
             info[i].count = parseInt(info[i].count) + 1;
             found = 1;
@@ -33,7 +117,8 @@ function combineCounts(name, value){
     if (found === 0){
         info.push({[name] : value, count: 1});
     }
-    writeData(info, name);
+    writeData(info, "data2");
+*/
 }
 
 // This is the controler per se, with the get/post
@@ -59,18 +144,7 @@ module.exports = function(app){
     app.post('/niceSurvey', urlencodedParser, function(req, res){
         console.log(req.body);
         var json = req.body;
-        for (var key in json){
-            console.log(key + ": " + json[key]);
-            // in the case of checkboxes, the user might check more than one
-            if ((key === "color") && (json[key].length === 2)){
-                for (var item in json[key]){
-                    combineCounts(key, json[key][item]);
-                }
-            }
-            else {
-                combineCounts(key, json[key]);
-            }
-        }
+        combineCounts(json);
         // mystery line... (if I take it out, the SUBMIT button does change)
         // if anyone can figure this out, let me know!
         res.sendFile(__dirname + "/views/niceSurvey.html");

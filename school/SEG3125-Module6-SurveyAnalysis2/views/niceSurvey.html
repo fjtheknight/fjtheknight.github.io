@@ -45,7 +45,7 @@
 
         <div class="question">
         <h2> Numero d'étudiant</h2>
-        <input type="text" name="prenom">
+        <input type="text" name="number">
 
         <br>
         <br>
@@ -53,27 +53,27 @@
 
         <div class="question">
           <h2> Je pense que le site web duniversitaire a besoin de réformation</h2>
-            <input type="radio" id="oui" name="booleen" value="oui">
+            <input type="radio" id="oui" name="reform" value="yes">
             <label for="oui">oui</label><br>
-            <input type="radio" id="non" name="booleen" value="non">
+            <input type="radio" id="non" name="reform" value="no">
             <label for="non">non</label><br>
         </div>
 
         <div class="question">
           <h2> Au lieu de la couleur principale du site, je veux:</h2>
           <br>
-          <select id="favorite">
+          <select id="favorite" name="color">
             <option value="blue" selected="selected">blue</option>
             <option value="orange">orange</option>
-            <option value="vert">vert</option>
+            <option value="green">vert</option>
           </select>
         </div>
           
         <div class="question">
           <h2> Je n'aime pas le site actuel parce que: </h2>
-          <input type="checkbox" name="raison" value="moche">il est moche<br>
-          <input type="checkbox" name="raison" value="fonts">les fonts sont peu visibles<br>
-          <input type="checkbox" name="raison" value="images">les images de fond ne sont pas agréables à voir<br>
+          <input type="checkbox" name="dislike" value="whole">il est moche<br>
+          <input type="checkbox" name="dislike" value="fonts">les fonts sont peu visibles<br>
+          <input type="checkbox" name="dislike" value="images">les images de fond ne sont pas agréables à voir<br>
           
           <br>
 
@@ -83,11 +83,11 @@
           <h2> Je suis satisfait avec les site web de l'université: </h2>
           <ul class="likert">
             <li> Pas satisfait du tout </li>
-            <li><input type="radio" name="guilty" value="1" /></li>
-            <li><input type="radio" name="guilty" value="2" /></li>
-            <li><input type="radio" name="guilty" value="3" /></li>
-            <li><input type="radio" name="guilty" value="4" /></li>
-            <li><input type="radio" name="guilty" value="5" /></li>
+            <li><input type="radio" name="satisfaction" value="1" /></li>
+            <li><input type="radio" name="satisfaction" value="2" /></li>
+            <li><input type="radio" name="satisfaction" value="3" /></li>
+            <li><input type="radio" name="satisfaction" value="4" /></li>
+            <li><input type="radio" name="satisfaction" value="5" /></li>
             <li> Très satisfait </li>
           </ul>
         </div>
@@ -96,7 +96,7 @@
         <br>
         <div class="comment">
           <h2> J'ai d'autres commentaires sur le site: </h2>
-          <textarea></textarea>
+          <textarea name="comment"></textarea>
         </div>
         
             
