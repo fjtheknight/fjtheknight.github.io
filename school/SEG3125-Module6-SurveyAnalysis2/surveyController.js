@@ -24,8 +24,8 @@ function writeData(info, fileName){
 function combineCounts(value){
     console.log("combineCounts");
     console.log(value);
-    data = readData("data2");
-    console.log("data2 before");
+    data = readData("data");
+    console.log("data before");
     console.log(data);
      // will be useful for text entry, since the item typed in might not be in the list
 
@@ -102,23 +102,10 @@ function combineCounts(value){
 
 
 
-    console.log("data2 after");
+    console.log("data after");
     console.log(data);
-/*
-    var found = 0;
-    for (var i=0; i<info.length; i++){
-        console.log("loop");
-        console.log(info[i]);
-        if (info[i][name] === value){
-            info[i].count = parseInt(info[i].count) + 1;
-            found = 1;
-        }
-    }
-    if (found === 0){
-        info.push({[name] : value, count: 1});
-    }
-    writeData(info, "data2");
-*/
+
+    writeData(data, "data");
 }
 
 // This is the controler per se, with the get/post

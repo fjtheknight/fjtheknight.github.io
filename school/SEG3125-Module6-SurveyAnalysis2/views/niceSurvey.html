@@ -5,6 +5,7 @@
   <head>
     <title>Questionnaire</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/styles/style.css" rel="stylesheet" type="text/css">
 
     <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -14,11 +15,18 @@
 
     <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
   </head>
+
+  <body>
+
+    <div class="container-md p-3 my-3 border bg-dark text-white" id="title">
+      <h1>UOttawa Website Survey</h1>
+      
+    </div>
   	
 	<div class="container-md p-3 my-3 border bg-dark text-white" id="survey">
-      <body>
+      
 
-      <h1>Le site web de l'Université d'Ottawa, qu'est-ce que vous en pensez?</h1>
+      
 
       <h2>Qu'est-ce que vous pensez du site web de l'<a href="https://www.uottawa.ca/">Université d'Ottawa</a>?</h2>  
 
@@ -71,9 +79,9 @@
           
         <div class="question">
           <h2> Je n'aime pas le site actuel parce que: </h2>
-          <input type="checkbox" name="dislike" value="whole">il est moche<br>
-          <input type="checkbox" name="dislike" value="fonts">les fonts sont peu visibles<br>
-          <input type="checkbox" name="dislike" value="images">les images de fond ne sont pas agréables à voir<br>
+          <input type="checkbox" name="dislike" value="whole"> il est moche<br>
+          <input type="checkbox" name="dislike" value="fonts"> les fonts sont peu visibles<br>
+          <input type="checkbox" name="dislike" value="images"> les images de fond ne sont pas agréables à voir<br>
           
           <br>
 
@@ -108,8 +116,18 @@
         </button>
         
       </form>
-      <p id="signature">Site Web conçu par Firas Jribi</p>  
 
+      </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small container-md p-3 my-3 border bg-dark text-white">
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright: 
+      <div class="footer-copyright text-center py-3">Site web conçu par Firas Jribi 
+      </div>
+      <!-- Copyright -->
+
+    </footer>
       
 	<script src="/assets/action.js"></script>
   </body>
