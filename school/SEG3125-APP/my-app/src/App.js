@@ -1,37 +1,28 @@
 import React, { Component } from 'react';
 import AppNavbar from './AppNavbar';
 import Home from './Home';
-import Survey from './Survey';
+import SurveyPage from './Survey';
 import Instructions from './Instructions';
-import Popper from 'popper.js';
+import Results from './Results';
+import LandingPage from './LandingPage';
+import NotFoundPage from './NotFoundPage';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom'
 
 class App extends Component {
 
-  state = {
-    activePage: 0,
-    pages: [
-      <Home/>,
-      <Survey/>,
-      <Instructions/>,
-    ]
-  }
-
-  handleNavBar = (i) => {
-    this.setState({
-      activePage: i
-    })
-  }
-
-
-
   render(){
-    console.log(this.state.activePage);
-    console.log(this.state.pages);
     return (
-      <div className="App">
-        <AppNavbar handleNavBar={this.handleNavBar}/>
-        {this.state.pages[this.state.activePage]}
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={LandingPage}/>
+          <Route component={NotFoundPage} />
+        </Switch>
+      </Router>
     );
     }
 
